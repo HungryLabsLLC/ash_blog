@@ -1,0 +1,9 @@
+%h1
+  = @post.title
+  %small= @post.created_at.strftime("%B %d, %Y")
+- @post.segments.each do |segment|
+  %div.large-1.columns
+    = link_to "Edit", edit_post_segment_path(@post, segment)
+  %div.large-11.columns
+    = segment.content.html_safe
+= link_to "Add Segment", new_post_segment_path(@post)

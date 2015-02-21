@@ -1,0 +1,5 @@
+= tinymce_assets 
+= form_for([@post, @segment]) do |f|
+  = f.text_area :content, :class => "tinymce", :rows => 40, :cols => 120 
+  = tinymce
+  = f.submit class: "button"

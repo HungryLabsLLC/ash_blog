@@ -1,0 +1,8 @@
+%h1 Create a new Post Ya Dink
+= form_for @post do |f|
+  %div.row
+    %div.large-2.columns
+      = f.label :title
+    %div.large-10.columns
+      = f.text_field :title, placeholder: "Choose your title wisely..."
+  = f.submit class: "button"

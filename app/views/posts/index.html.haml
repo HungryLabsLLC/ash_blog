@@ -1,0 +1,19 @@
+%h1 Here's All Mah Posts
+%div
+  Because you're Ashy You can do these things!
+  %br/
+  = link_to "New Post", new_post_path, class: "button"
+%table
+  %thead
+    %tr
+      %th Post
+      %th Submitted
+      %th Read
+      %th Edit
+  %tbody
+    - @posts.each do |post|
+      %tr
+        %td= "#{post.id} - #{post.title}"
+        %td= post.created_at.strftime("%B, %d %Y")
+        %td= link_to "Read", post_path(post)
+        %td= link_to "Edit", edit_post_path(post)
