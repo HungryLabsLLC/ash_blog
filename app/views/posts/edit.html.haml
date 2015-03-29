@@ -1,5 +1,6 @@
 %h1
   = @post.title
+  %br/
   %small= @post.created_at.strftime("%B %d, %Y")
 - @post.segments.each do |segment|
   %div.large-1.columns

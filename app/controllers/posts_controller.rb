@@ -3,6 +3,15 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    if params[:publish].present?
+      post = Post.find(params[:publish])
+      post.published = true
+      post.save
+    elsif params[:unpublish].present?
+      post = Post.find(params[:unpublish])
+      post.published = false
+      post.save
+    end
   end
 
   def new

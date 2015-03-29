@@ -1,13 +1,21 @@
 %ul.pricing-table
-  %li.title= image_tag ("ash1.jpg")
+  %li.title= image_tag ("ash_and_erol.jpg")
   %li.price Hi I'm Ashleigh!
   %li.description 
-    This is just a little description about how I'm pretty cool but my husband Erol is WAY cooler.
-  %li.bullet-item INSTAGRAM
-  %li.bullet-item PINTEREST
-  %li.bullet-item= text_field_tag "search", nil, placeholder: "Search for Stuff!"
-  %li.bullet-item= select_tag "categories", options_for_select(["Food", "Drank", "Family"])
-  %li.bullet-item TOP POSTS
-  %li.bullet-item Blogs I Like
+    Welcome to my little piece of the Internet where I celebrate laughter, love and happiness.
+  %li.bullet-item= link_to "INSTAGRAM", "https://instagram.com/ashleigherturk"
+  %li.bullet-item= link_to "PINTEREST", "https://www.pinterest.com/ashserra"
+  %li.bullet-item 
+    %b Blogs that make me happy
+    %p
+      %ul{:style => "font-size: 14px;"}
+        %li= link_to "Love Taza", "http://lovetaza.com/"
+        %li= link_to "Cupcakes and Cashmere ", "http://cupcakesandcashmere.com/"
+        %li= link_to "Classy Girls Wear Pearls",  "http://www.classygirlswearpearls.com/"
+        %li= link_to "Atlantic Pacific", "http://atlantic-pacific.blogspot.com/"
+        %li= link_to "Gal Meets Glam", "http://galmeetsglam.com/"
+        %li= link_to "M Loves M", "http://www.mlovesmblog.com/"
+        %li= link_to "Bows & Sequins", "http://bowsandsequins.com/"
+        %li= link_to "Paris in Four Months", "http://parisinfourmonths.com/"
   %li.cta-button
-    %a.button{:href => "#"} EMAIL ME
+    %a.button{:href => "mailto:ashleighanderol@gmail.com"} EMAIL ME

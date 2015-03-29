@@ -10,10 +10,16 @@
       %th Submitted
       %th Read
       %th Edit
+      %th Publish
   %tbody
-    - @posts.each do |post|
+    - @posts.sort_by(&:created_at).each do |post|
       %tr
         %td= "#{post.id} - #{post.title}"
         %td= post.created_at.strftime("%B, %d %Y")
         %td= link_to "Read", post_path(post)
         %td= link_to "Edit", edit_post_path(post)
+        %td
+          - if post.published
+            = link_to "Unpublish?", posts_path(unpublish: post.id), class: "button small alert"
+          - else
+            = link_to "Publish", posts_path(publish: post.id), class: "button small success"
