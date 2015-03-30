@@ -5,8 +5,8 @@
   - @post.segments.each do |segment|
     %div{:style => "font-family: Georgia;"}
       = segment.content.html_safe
-    %div
-      = link_to like_post_path(@post), remote: true do
-        = evil_icon "ei-heart"
-      %span#likes
-        = render "posts/likes"
+  %div
+    = link_to like_post_path(@post), remote: true do
+      = evil_icon "ei-heart"
+    %span#likes
+      = render "posts/likes"
