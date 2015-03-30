@@ -1,6 +1,7 @@
 class MainController < ApplicationController
 
-  def home
+  def index
+    @post = Post.where(published: true).last
   end
   
 end

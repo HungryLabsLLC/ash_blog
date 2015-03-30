@@ -16,3 +16,4 @@ gem 'devise'
 gem 'thin', group: :development
 gem 'modernizr-rails'
 gem 'rails_12factor'
+gem 'evil_icons'

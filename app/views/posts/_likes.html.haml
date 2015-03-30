@@ -1,0 +1,4 @@
+- if params[:id].present?
+  = Post.find(params[:id]).likes.count
+- elsif @post.present?
+  = @post.likes.count

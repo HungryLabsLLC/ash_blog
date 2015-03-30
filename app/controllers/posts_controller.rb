@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, :except => [:show]
+  before_action :authenticate_user!, :except => [:show, :like]
 
   def index
     @posts = Post.all
@@ -16,6 +16,15 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+  end
+
+  def like
+    @post = Post.find(params[:id])
+    if @post.likes.create(ip_address: request.remote_ip)
+      render 'like'
+    else
+      render 'like'
+    end
   end
 
   def update

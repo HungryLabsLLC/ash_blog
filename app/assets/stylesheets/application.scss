@@ -1,3 +1,8 @@
 @import "foundation_and_overrides";
 @import "main";
 @import url(http://fonts.googleapis.com/css?family=Bree+Serif);
+@import "evil-icons";
+
+.icon--ei-heart {
+  fill: red;
+}

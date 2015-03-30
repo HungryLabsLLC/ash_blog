@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users
   resources :posts do 
+    member do 
+      get 'like'
+    end
     resources :segments
   end
   
