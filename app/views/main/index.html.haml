@@ -1,12 +1,13 @@
 - if Post.where(published: true).present?
-  %span{:style => "font-family: 'Bree Serif', serif;font-size: 42px;"}
-    = @post.title
-  %p{:style => "font-size: 18px;"}= @post.created_at.strftime("%B %d, %Y")
-  - @post.segments.each do |segment|
-    %div{:style => "font-family: Georgia;"}
-      = segment.content.html_safe
-  %div
-    = link_to like_post_path(@post), remote: true do
-      = evil_icon "ei-heart"
-    %span#likes
-      = render "posts/likes"
+  - @posts.each do |post|
+    %span{:style => "font-family: 'Bree Serif', serif;font-size: 42px;"}
+      = post.title
+    %p{:style => "font-size: 18px;"}= post.created_at.strftime("%B %d, %Y")
+    - post.segments.each do |segment|
+      %div{:style => "font-family: Georgia;"}
+        = segment.content.html_safe
+    %div
+      = link_to like_post_path(post), remote: true do
+        = evil_icon "ei-heart"
+      %span#likes
+        = render "posts/likes"

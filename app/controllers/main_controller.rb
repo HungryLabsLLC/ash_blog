@@ -1,7 +1,7 @@
 class MainController < ApplicationController
 
   def index
-    @post = Post.where(published: true).last
+    @posts = Post.ordered_published_posts
   end
   
 end
