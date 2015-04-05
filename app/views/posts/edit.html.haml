@@ -1,5 +1,6 @@
-%h1
+%h1#title
   = @post.title
+  = link_to "Edit", edit_post_path(@post, title: true), class: "radius button tiny", remote: true
   %br/
   %small= @post.created_at.strftime("%B %d, %Y")
 - @post.segments.each do |segment|

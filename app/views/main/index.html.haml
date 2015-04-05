@@ -2,7 +2,7 @@
   - @posts.each do |post|
     %span{:style => "font-family: 'Bree Serif', serif;font-size: 42px;"}
       = post.title
-    %p{:style => "font-size: 18px;"}= post.created_at.strftime("%B %d, %Y")
+    %p{:style => "font-size: 18px;"}= post.published_date.strftime("%B %d, %Y")
     - post.segments.each do |segment|
       %div{:style => "font-family: Georgia;"}
         = segment.content.html_safe

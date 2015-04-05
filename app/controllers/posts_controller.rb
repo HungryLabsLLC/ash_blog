@@ -6,10 +6,12 @@ class PostsController < ApplicationController
     if params[:publish].present?
       post = Post.find(params[:publish])
       post.published = true
+      post.published_date = Date.today
       post.save
     elsif params[:unpublish].present?
       post = Post.find(params[:unpublish])
       post.published = false
+      post.published_date = Date.today
       post.save
     end
   end
@@ -28,6 +30,9 @@ class PostsController < ApplicationController
   end
 
   def update
+    @post = Post.find(params[:id])
+    @post.update_attributes(post_params)
+    redirect_to edit_post_path(@post)
   end
 
   def show
@@ -50,7 +55,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:id, :title)
+    params.require(:post).permit(:id, :title, :published_date)
   end
 
 end
