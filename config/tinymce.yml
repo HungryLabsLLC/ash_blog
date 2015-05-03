@@ -4,3 +4,6 @@ toolbar:
 plugins:
   - image
   - link
+  - wordcount
+browser_spellcheck:
+  - true
